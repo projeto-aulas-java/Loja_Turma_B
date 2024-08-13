@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-	
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.etec.model.Operacoes">
-	<!-- TODO Add Nodes -->
+
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: red;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="br.com.etec.model.Operacoes">
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="38.0" prefHeight="425.0" prefWidth="431.0" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+         <children>
+            <TextField layoutX="44.0" layoutY="70.0" prefHeight="41.0" prefWidth="380.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0" />
+            <PasswordField layoutX="59.0" layoutY="158.0" prefHeight="41.0" prefWidth="352.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="100.0" />
+            <Button layoutX="37.0" layoutY="179.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="380.0" text="LOGAR" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="170.0" />
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
