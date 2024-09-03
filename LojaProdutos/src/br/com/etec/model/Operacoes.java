@@ -27,14 +27,28 @@ public class Operacoes {
 		if(nomeUsuario.isEmpty() || senhaUsuario.isEmpty()) {
 			
 			if(nomeUsuario.isEmpty()) {
-			mostrarMensagem(Alert.AlertType.WARNING, "FALTANDO DADOS", "INFORMAR O USUÁRIO");
+			mostrarMensagem(Alert.AlertType.WARNING, 
+					"FALTANDO DADOS", "INFORMAR O USUÁRIO");
 			} // if
 			else {
-				mostrarMensagem(Alert.AlertType.WARNING, "FALTANDO DADOS", "INFORMAR A SENHA");
-			}
+				if(senhaUsuario.isEmpty()){
+					mostrarMensagem(Alert.AlertType.WARNING, 
+							"FALTANDO DADOS", "INFORMAR A SENHA");
+				}
+				}
 			
 		} // if
-		
+	
+		else {
+			if(nomeUsuario.equals("admin") && senhaUsuario.equals("123456")) {
+				mostrarMensagem(Alert.AlertType.CONFIRMATION, 
+						"ACESSO PERMITIDO", "Logado no sistema.");
+			}
+			else {
+				mostrarMensagem(Alert.AlertType.ERROR, 
+						"ERRO DE ACESSO", "Usuário ou senha errada.");
+			}
+		}
 	} // acessarConta
 	
 	//----------------------------------------------------------------

@@ -1,1 +1,4 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#background_palco{
+	-fx-background-color: linear-gradient(to right, #C4DAD2, #6A9C89, #16423C);
+}
