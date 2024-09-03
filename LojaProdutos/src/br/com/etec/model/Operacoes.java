@@ -14,6 +14,8 @@ public class Operacoes {
 	private PasswordField psfUsuario;
 	@FXML
 	private Button btnAcessar;
+	@FXML
+	private Button btnFechar;
 	
 	@FXML
 	private void acessarConta(ActionEvent event) {
@@ -59,5 +61,14 @@ public class Operacoes {
 		alerta.setContentText(mensagem);
 		alerta.showAndWait();
 	}
+	
+	//----------------------------------------------------------------
+	@FXML
+	private void fecharTela(ActionEvent event) {
+		
+		
+		
+	}
+	
 	
 }
