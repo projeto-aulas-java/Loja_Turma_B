@@ -14,6 +14,6 @@
             <Button fx:id="btnAcessar" layoutX="37.0" layoutY="179.0" mnemonicParsing="false" onAction="#acessarConta" prefHeight="41.0" prefWidth="380.0" text="LOGAR" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="170.0" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnFechar" layoutX="470.0" layoutY="2.0" mnemonicParsing="false" onAction="#fecharTela" text="X" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="btnFechar" layoutX="470.0" layoutY="2.0" mnemonicParsing="false" onAction="#fecharTelaLogin" text="X" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>
