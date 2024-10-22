@@ -2,6 +2,9 @@ package br.com.etec.model;
 
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import javafx.collections.FXCollections;
@@ -40,7 +43,34 @@ public class ClassePrincipal implements Initializable{
 	}
 	
 	
-	
+	// Método para inserir dados no banco de dados
+    public void inserirDados(String valor) {
+        String sql = "INSERT INTO produtos_tb (tipo, marca, modelo) VALUES (?, ?, ?)";
+        
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        
+        try {
+            conn = ClasseConexao.conectar();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, tipoProduto);
+            pstmt.setString(2, marcaProduto);
+            pstmt.setString(3, modeloProduto);
+            pstmt.executeUpdate();
+            System.out.println("Inserção bem-sucedida!");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+        	ClasseConexao.fechar(conn);
+            if (pstmt != null) {
+                try {
+                    pstmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 	
 	
 
