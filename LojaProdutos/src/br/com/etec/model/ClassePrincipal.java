@@ -4,6 +4,7 @@ package br.com.etec.model;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -32,6 +33,7 @@ public class ClassePrincipal implements Initializable{
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		
+		/*
 		ObservableList<String> lista = FXCollections.observableArrayList("Chinelo", "Tênis");
 		cmbTipo.setItems(lista);
 		
@@ -40,9 +42,14 @@ public class ClassePrincipal implements Initializable{
 		
 		ObservableList<String> lista3 = FXCollections.observableArrayList("TEN001", "CHN001", "TEA001", "CHA001");
 		cmbTipo.setItems(lista3);
+		*/
+		// Chamar o método com as informações
+		carregarComboBox(cmbTipo, "tipo");
+		carregarComboBox(cmbMarca, "marca");
+		carregarComboBox(cmbModelo, "modelo");
 	}
 	
-	
+	/*
 	// Método para inserir dados no banco de dados
     public void inserirDados(String valor) {
         String sql = "INSERT INTO produtos_tb (tipo, marca, modelo) VALUES (?, ?, ?)";
@@ -72,6 +79,26 @@ public class ClassePrincipal implements Initializable{
         }
     }
 	
+	*/
 	
+	private void carregarComboBox(ComboBox<String> comboBox, String coluna){
+		// Variável lista = collections (guardar várias informações)
+		ObservableList<String> lista = 
+				FXCollections.observableArrayList();
+		try (Connection conn = ClasseConexao.conectar()){
+			// Pra exutar o comando SQL e guardar na variável rs
+			String sql = "SELECT DISTINCT" + coluna + "FROM minhatabela_tb";
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				lista.add(rs.getString(coluna));
+			}
+			// Jpga os valores da lista na combobox
+			comboBox.setItems(lista);
+		} // fecha try
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	} // void
 
 }
